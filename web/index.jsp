@@ -19,23 +19,43 @@
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
 
 		<!-- Latest compiled and minified JavaScript -->
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-
+		<script type="text/javascript">
+			function beforeSubmit(){
+				var cpt = 0;
+				$('.mandatory').each(function(){
+					if($(this).val() == ''){
+						cpt++;
+						$(this).addClass('mandatory-exec');
+					}else{
+						$(this).removeClass('mandatory-exec');
+					}
+				});
+				return cpt === 0;
+			}
+		</script>
+		<style type="text/css">
+			.mandatory-exec {
+				border: 1px solid #b40000;
+				background-color: #ff8c8c;
+			}
+		</style>
     </head>
     <body>
 		<div class="container">
 			<h1>TP J2EE - Xavier TALANDIER INFRES 4</h1>
-			<form method="post" action="/TP-J2EE/PersonneServlet" role="form" class="form-horizontal">
+			<form onsubmit="return beforeSubmit();" method="post" action="/TP-J2EE/PersonneServlet" role="form" class="form-horizontal">
 				<div class="form-group">
 					<label class="col-lg-2 control-label" for="txtnom">Nom :</label>
 					<div class="col-lg-10">
-						<input type="text" class="form-control" name="txtnom" />
+						<input type="text" class="form-control mandatory" name="txtnom" />
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-lg-2 control-label" for="txtprenom">Prénom :</label>
 					<div class="col-lg-10">
-						<input type="text" class="form-control" name="txtprenom" />
+						<input type="text" class="form-control mandatory" name="txtprenom" />
 					</div>
 				</div>
 				<div class="form-group">
@@ -61,7 +81,7 @@
 				<div class="form-group">
 					<label class="col-lg-2 control-label" for="txtcp">CP :</label>
 					<div class="col-lg-10">
-						<input type="text" class="form-control" name="txtcp" />
+						<input type="text" class="form-control mandatory" name="txtcp" />
 					</div>
 				</div>
 				<div class="form-group">
