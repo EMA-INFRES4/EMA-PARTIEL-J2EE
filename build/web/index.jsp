@@ -24,7 +24,7 @@
     </head>
     <body>
 		<div class="container">
-			<h1>TP J2EE</h1>
+			<h1>TP J2EE - Xavier TALANDIER INFRES 4</h1>
 			<form method="post" action="/TP-J2EE/PersonneServlet" role="form" class="form-horizontal">
 				<div class="form-group">
 					<label class="col-lg-2 control-label" for="txtnom">Nom :</label>
