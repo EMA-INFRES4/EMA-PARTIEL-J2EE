@@ -78,6 +78,10 @@ public class PersonneBean implements Serializable {
 	 * @return the transport
 	 */
 	public String[] getTransport() {
+		// Crapy code !!!
+		if(transport == null){
+			return "".split(",");
+		}
 		return transport;
 	}
 
