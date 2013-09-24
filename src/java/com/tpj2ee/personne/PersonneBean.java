@@ -80,7 +80,7 @@ public class PersonneBean implements Serializable {
 	public String[] getTransport() {
 		// Crapy code !!!
 		if(transport == null){
-			return "".split(",");
+			return "Non communiqué".split(",");
 		}
 		return transport;
 	}
